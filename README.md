@@ -3,8 +3,13 @@
 
 #使用方法
 1.导入我的头文件#import "LZBInifiteScrollView.h"
+
 2.最好采用懒加载控件LZBInifiteScrollView（在这里是个人习惯，但是这里有个注意点：我们都知道控件的属性保存@property一般是用weak修饰，因为在addSubview的时候就已经有strong强引用这个控件了，但是懒加载的时候一定要用strong,原因：创建控件后（alloc或者new）,都会使引用计数器加1，默认是强指针指向他，假如用weak修饰，返回的是_（下划线）+属性是弱引用，会自动销毁，可能返回nil,懒加载控件不成功）
+
 3.设置轮播图的滚动图片数组支持(里面可以存放UIImage对象、NSString对象【本地图片名】、NSURL对象【远程图片的URL】注意：设置SDWebImage加载图片的时候注意设置info.plist里面，支持网络https请求App Transport Security Settings)
+
+
+
 #下面是功能参数介绍
 placeholder ： 可选设置，可以设置占位图片，默认是我LZBInifiteScrollView.bundle/placeHoder  
 images: 必选设置，图片数据(里面可以存放UIImage对象、NSString对象【本地图片名】、NSURL对象【远程图片的URL】)
